@@ -1,0 +1,109 @@
+/*General*/
+*{
+  box-sizing:border-box;
+  width:100%;
+}
+body{
+  background-color:#274A7D;
+  color:white;
+}
+/*Header*/
+h1{
+  text-align:center;
+  padding:25px;
+}
+header{
+  width:100%;
+}
+.header-features{
+  width:60%;
+  display:flex;
+  flex-wrap:wrap;
+  padding:15px;
+  margin:auto;
+}
+.stars{
+  width:33.333333333%;
+  display:inline-block;
+  text-align:center;
+}
+.star{
+  font:16px;
+  padding:0;
+  margin:0;
+  width:1em;
+}
+.scores{
+  display:inline-block;
+  width:33.333333333%;
+  text-align:left;
+}
+.reset{
+  width:33.333333333%;
+  display:inline-block;
+  text-align:center;
+}
+.reset-button{
+  width:auto;
+  font-size: 36px;
+}
+a{
+  text-decoration: none;
+}
+#reset-button{
+  color:white;
+}
+a:hover{
+  cursor:pointer;
+}
+/*Cards*/
+.card-container{
+  width:90%;
+  margin:auto;
+  height:auto;
+  display:flex;
+  flex-wrap:wrap;
+  background-color: lightgrey;
+  text-align:center;
+  justify-content: center;
+  padding-top:20px;
+  padding-bottom:20px;
+  border-radius:20px;
+  margin-bottom:20px;
+}
+.card{
+  background: rgb(2,0,36);
+  background: -moz-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 44%, rgba(20,147,172,1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 44%, rgba(20,147,172,1) 100%);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 44%, rgba(20,147,172,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#1493ac",GradientType=1);
+  height:150px;
+  width:40%;
+  margin:10px;
+  padding:5px;
+  border-radius:5px;
+}
+.card:hover{
+  cursor:pointer;
+}
+.card:active{
+  background: rgb(2,0,36);
+  background: -moz-radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(25,61,92,1) 79%, rgba(246,246,246,1) 100%);
+  background: -webkit-radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(25,61,92,1) 79%, rgba(246,246,246,1) 100%);
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(25,61,92,1) 79%, rgba(246,246,246,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#f6f6f6",GradientType=1);
+}
+/*Media Queries*/
+@media screen and (min-width:700px){
+  .card-container{
+    width:85%;
+  }
+  .card{
+    width:20%;
+  }
+}
+@media screen and (min-width:1300px){
+  .card-container{
+    max-width:1104px;
+  }
+}
