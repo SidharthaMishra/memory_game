@@ -2,6 +2,7 @@
 *{
   box-sizing:border-box;
   width:100%;
+  border:2px solid red;
 }
 body{
   background-color:#274A7D;
@@ -26,17 +27,20 @@ header{
   width:33.333333333%;
   display:inline-block;
   text-align:center;
+  margin:auto;
 }
 .star{
   font:16px;
   padding:0;
   margin:0;
   width:1em;
+  color:orange;
 }
 .scores{
   display:inline-block;
   width:33.333333333%;
   text-align:left;
+  margin:auto;
 }
 .reset{
   width:33.333333333%;
@@ -63,7 +67,7 @@ a:hover{
   height:auto;
   display:flex;
   flex-wrap:wrap;
-  background-color: lightgrey;
+  background-color: dimgray;
   text-align:center;
   justify-content: center;
   padding-top:20px;
@@ -72,26 +76,39 @@ a:hover{
   margin-bottom:20px;
 }
 .card{
-  background: rgb(2,0,36);
-  background: -moz-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 44%, rgba(20,147,172,1) 100%);
-  background: -webkit-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 44%, rgba(20,147,172,1) 100%);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 44%, rgba(20,147,172,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#1493ac",GradientType=1);
   height:150px;
   width:40%;
   margin:10px;
   padding:5px;
   border-radius:5px;
 }
+.card-closed{
+  background: rgb(2,0,36);
+  background: -moz-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 44%, rgba(20,147,172,1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 44%, rgba(20,147,172,1) 100%);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 44%, rgba(20,147,172,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#1493ac",GradientType=1);
+}
 .card:hover{
   cursor:pointer;
 }
-.card:active{
-  background: rgb(2,0,36);
-  background: -moz-radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(25,61,92,1) 79%, rgba(246,246,246,1) 100%);
-  background: -webkit-radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(25,61,92,1) 79%, rgba(246,246,246,1) 100%);
-  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(25,61,92,1) 79%, rgba(246,246,246,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#f6f6f6",GradientType=1);
+.card-icon{
+  visibility:hidden;
+  color:white;
+  font-size:24px;
+  margin:auto;
+}
+.card-icon-visible{
+  visibility:visible;
+}
+.card-open{
+  background-color:lightblue;
+  height:150px;
+  width:40%;
+  margin:10px;
+  padding:5px;
+  border-radius:5px;
+  /*TODO: Add transition effect*/
 }
 /*Media Queries*/
 @media screen and (min-width:700px){
