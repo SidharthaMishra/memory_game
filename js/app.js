@@ -24,6 +24,7 @@ let openCards=[];//array to hold open cards
 let numMatchedCards=0;
 const deck=document.querySelector('.card-container');
 const resetButton=document.querySelector('#reset-button');
+const movesContainer=document.querySelector('.moves');
 //Event Listeners
 //Card Click Event Listener
 deck.addEventListener('click',function(evt) {
@@ -73,8 +74,9 @@ function processCard(card){
   if(!card.classList.contains("card-open") && !card.classList.contains("card-matched")){
       toggleCard(card);
       openCards.push(card);
+      ++moves;
+      displayMoves();
     }
-
   if(openCards.length==2 && !card.classList.contains("card-matched")){
     setTimeout(function(){
       for(let card in openCards){
@@ -96,6 +98,10 @@ function processCard(card){
 }
 //TODO: Implement Display Modal Function to let user know when they have won
 
+//Display moves function
+function displayMoves(){
+  document.querySelector('.moves').innerHTML = moves + " Moves";
+}
 //Reset Function
 function reset(){
   moves=0;
@@ -117,7 +123,7 @@ function shuffle(arr){
     }
   }
 }
-//Assign Icons to Cards
+//Function assigns Icons to Cards
 function assignIcons(arr){
   const deck=document.querySelector('.card-container');
   for(let i=0;i<arr.length;i++){

@@ -36,11 +36,13 @@ header{
   width:1em;
   color:orange;
 }
-.scores{
+.moves{
   display:inline-block;
   width:33.333333333%;
   text-align:left;
   margin:auto;
+  font-size:24px;
+  font-weight:bold;
 }
 .reset{
   width:33.333333333%;
