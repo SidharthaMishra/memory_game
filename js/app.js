@@ -91,8 +91,10 @@ function processCard(card){
     numMatchedCards+=2;
     openCards=[];
     if(numMatchedCards===16){
-      console.log("You won!");
       //TODO:Call displayModal function here to let use know they have won
+      //Temporary alert: replace with call to displayModal with the
+      //same time delay
+      setTimeout(function(){alert("You Won!")},500);
     }
   }
 }
