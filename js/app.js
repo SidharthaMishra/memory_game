@@ -19,16 +19,15 @@ let icons =[
   "fas fa-chess-king"
 ];
 let moves=0;
-let points=100;
 let openCards=[];//array to hold open cards
 let numMatchedCards=0;
+let currentCard;
 const deck=document.querySelector('.card-container');
 const resetButton=document.querySelector('#reset-button');
 const movesContainer=document.querySelector('.moves');
 //Event Listeners
 //Card Click Event Listener
 deck.addEventListener('click',function(evt) {
-  let currentCard;
   currentCard=evt.target;
   processCard(currentCard);
 });
@@ -43,6 +42,7 @@ document.addEventListener('DOMContentLoaded',function(){
 //Initialize/reload page
 function gameInit(){
   moves=0;
+  numMatchedCards=0;
   shuffle(icons);
   assignIcons(icons);
 }

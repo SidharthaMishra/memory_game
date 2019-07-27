@@ -11,6 +11,7 @@ body{
 h1{
   text-align:center;
   padding:25px;
+  font-family: 'Montserrat', sans-serif;
 }
 header{
   width:100%;
@@ -41,6 +42,7 @@ header{
   text-align:left;
   margin:auto;
   font-size:24px;
+  font-family:'Montserrat', sans-serif;
 }
 .reset{
   width:33.333333333%;
