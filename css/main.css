@@ -89,18 +89,19 @@ a:hover{
   padding:5px;
   border-radius:5px;
   box-shadow:5px 5px 10px #001a33;
+  transition: transform 0.5s;
 }
 .card-closed{
   background-color:#4d4d4d;
 }
 .card-open{
+  transform:rotateY(180deg);
   background-color:navy;
   height:150px;
   width:40%;
   margin:10px;
   padding:5px;
   border-radius:5px;
-  /*TODO: Add transition effect*/
 }
 .card:hover{
   cursor:pointer;
@@ -113,6 +114,7 @@ a:hover{
   font-size:24px;
   color:white;
   margin:auto;
+  transform:rotateY(180deg)
 }
 .card-matched{
   background-color:purple;
