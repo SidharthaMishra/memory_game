@@ -119,6 +119,12 @@ a:hover{
 .card-matched{
   background-color:purple;
   pointer-events:none;
+  transform:rotateY(360deg);
+}
+.card-unmatched{
+  background-color:red;
+  pointer-events:none;
+  transform:translateX(5px);
 }
 /*Media Queries*/
 @media screen and (min-width:700px){

@@ -22,6 +22,7 @@ let moves=0;
 let openCards=[];//array to hold open cards
 let numMatchedCards=0;
 let currentCard;
+let unmatchedCards;
 const deck=document.querySelector('.card-container');
 const resetButton=document.querySelector('#reset-button');
 const movesContainer=document.querySelector('.moves');
@@ -96,6 +97,16 @@ function processCard(card){
       //same time delay
       setTimeout(function(){alert("You Won!")},500);
     }
+  }
+  else{
+    openCards[0].classList.add("card-unmatched");
+    openCards[1].classList.add("card-unmatched");
+    unmatchedCards=document.querySelectorAll('.card-unmatched');
+    setTimeout(function(){
+      for(let card in unmatchedCards){
+        unmatchedCards[card].classList.remove("card-unmatched");
+      }
+    },500);
   }
 }
 //TODO: Implement Display Modal Function to let user know when they have won
