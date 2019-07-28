@@ -13,6 +13,10 @@ h1{
   padding:25px;
   font-family: 'Montserrat', sans-serif;
 }
+h2,
+h3{
+  font-family: 'Montserrat', sans-serif;
+}
 header{
   width:100%;
 }
@@ -125,6 +129,24 @@ a:hover{
   background-color:red;
   pointer-events:none;
   transform:translateX(5px);
+}
+/*Modal*/
+.modal{
+  color:black;
+}
+.modal-body{
+  font-size:18px;
+  padding:10px;
+  text-align:center;
+}
+.close{
+  text-align:right;
+  padding-right:25px;
+}
+.fa-trophy{
+  font-size:48px;
+  color:orange;
+  padding:18px;
 }
 /*Media Queries*/
 @media screen and (min-width:700px){

@@ -27,6 +27,7 @@ let numSeconds=0;
 const deck=document.querySelector('.card-container');
 const resetButton=document.querySelector('#reset-button');
 const movesContainer=document.querySelector('.moves');
+const newGameButton=document.querySelector('.new-game-btn');
 //Event Listeners
 //Card Click Event Listener
 deck.addEventListener('click',function(evt) {
@@ -41,12 +42,13 @@ resetButton.addEventListener('click',function(){
 document.addEventListener('DOMContentLoaded',function(){
   gameInit();
 });
+newGameButton.addEventListener('click',function(){
+  reset();
+});
 //Initialize/reload page
 function gameInit(){
   moves=0;
   numMatchedCards=0;
-
-  //setInterval(timer,1000);
   shuffle(icons);
   assignIcons(icons);
   startTimer();
@@ -66,7 +68,6 @@ function toggleCard(card){
       card.classList.toggle("card-icon-visible");
       card.parentNode.classList.toggle("card-closed");
       card.parentNode.classList.toggle("card-open");
-
     }
     else { //if anywhere else in the card is clicked
       card.childNodes[0].classList.toggle("card-icon-visible");
@@ -105,13 +106,9 @@ function processClick(card){
     numMatchedCards+=2;
     openCards=[];
     if(numMatchedCards===16){
-      //TODO:Call displayModal function here to let use know they have won
-      //Temporary alert: replace with call to displayModal with the
-      //same time delay
       setTimeout(function(){
         stopTimer();
-        let gameTime = calcTime(numSeconds);
-        alert("You Won! Elapsed Game Time: " + gameTime);
+        displayModal();
       },500);
     }
   }
@@ -134,8 +131,20 @@ function calcTime(s){
   s -= m * 60;
   return h + ":" + m + ":" + s;
 }
-//TODO: Implement Display Modal Function to let user know when they have won
-
+//Function displays the modal upon successful completion of game
+function displayModal(){
+  let gameTime = calcTime(numSeconds);
+  const modalBody=document.querySelector('.modal-body');
+  const modalMovesHTML="<h3>Moves: "+moves+" </h3>";
+  const modalTimerHTML="<h3>Time: "+gameTime+" </h3>";
+  const modalHeading="<h2>Congratulations! You won!</h2>";
+  const modalTrophy="<i class='fas fa-trophy'></i>";
+  modalBody.innerHTML+=modalTrophy;
+  modalBody.innerHTML+=modalHeading;
+  modalBody.innerHTML+=modalMovesHTML;
+  modalBody.innerHTML+=modalTimerHTML;
+  $('.modal').modal('show');
+}
 //Function: Adds specified class to obj
 function addClass(obj,className){
   obj.classList.add(className);
