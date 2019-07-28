@@ -30,7 +30,7 @@ const movesContainer=document.querySelector('.moves');
 //Card Click Event Listener
 deck.addEventListener('click',function(evt) {
   currentCard=evt.target;
-  processCard(currentCard);
+  processClick(currentCard);
 });
 //Reset Button Event Listener
 resetButton.addEventListener('click',function(){
@@ -54,6 +54,7 @@ function toggleCard(card){
       card.classList.toggle("card-icon-visible");
       card.parentNode.classList.toggle("card-closed");
       card.parentNode.classList.toggle("card-open");
+
     }
     else { //if anywhere else in the card is clicked
       card.childNodes[0].classList.toggle("card-icon-visible");
@@ -71,7 +72,7 @@ function checkMatch(card1, card2){
   }
 }
 //Processes the bulk of the clicking functionality
-function processCard(card){
+function processClick(card){
   if(!card.classList.contains("card-open") && !card.classList.contains("card-matched")){
       toggleCard(card);
       openCards.push(card);
@@ -87,8 +88,8 @@ function processCard(card){
     },650);
   }
   if(checkMatch(openCards[0],openCards[1])){
-    openCards[0].classList.add("card-matched");
-    openCards[1].classList.add("card-matched");
+    addClass(openCards[0],"card-matched");
+    addClass(openCards[1],"card-matched");
     numMatchedCards+=2;
     openCards=[];
     if(numMatchedCards===16){
@@ -99,18 +100,26 @@ function processCard(card){
     }
   }
   else{
-    openCards[0].classList.add("card-unmatched");
-    openCards[1].classList.add("card-unmatched");
+    addClass(openCards[0],"card-unmatched");
+    addClass(openCards[1],"card-unmatched");
     unmatchedCards=document.querySelectorAll('.card-unmatched');
     setTimeout(function(){
       for(let card in unmatchedCards){
-        unmatchedCards[card].classList.remove("card-unmatched");
+        removeClass(unmatchedCards[card],"card-unmatched");
       }
     },500);
   }
 }
 //TODO: Implement Display Modal Function to let user know when they have won
 
+//Function: Adds specified class to obj
+function addClass(obj,className){
+  obj.classList.add(className);
+}
+//Function: Removes specified class from obj
+function removeClass(obj,className){
+  obj.classList.remove(className);
+}
 //Display moves function
 function displayMoves(){
   document.querySelector('.moves').innerHTML = moves + " Moves";
