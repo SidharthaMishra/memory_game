@@ -7,7 +7,6 @@ body{
   background-color:#274A7D;
   color:white;
 }
-/*Header*/
 h1{
   text-align:center;
   padding:25px;
@@ -17,6 +16,7 @@ h2,
 h3{
   font-family: 'Montserrat', sans-serif;
 }
+/*Header*/
 header{
   width:100%;
 }
@@ -30,11 +30,10 @@ header{
 .stars{
   width:33.333333333%;
   display:inline-block;
-  text-align:center;
-  margin:auto;
+  text-align:left;
 }
 .star{
-  font:16px;
+  font:24px;
   padding:0;
   margin:0;
   width:1em;
@@ -134,11 +133,12 @@ a:hover{
 /*Modal*/
 .modal{
   color:black;
+  text-align: center;
+  justify-content: center;
 }
 .modal-body{
   font-size:18px;
   padding:10px;
-  text-align:center;
 }
 .close{
   text-align:right;

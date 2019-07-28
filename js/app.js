@@ -139,10 +139,14 @@ function displayModal(){
   const modalTimerHTML="<h3>Time: "+gameTime+" </h3>";
   const modalHeading="<h2>Congratulations! You won!</h2>";
   const modalTrophy="<i class='fas fa-trophy'></i>";
+  let stars= "<h3>Star Rating: ";
+  stars+= generateStars();
+  stars+="</h3>";
   modalBody.innerHTML+=modalTrophy;
   modalBody.innerHTML+=modalHeading;
   modalBody.innerHTML+=modalMovesHTML;
   modalBody.innerHTML+=modalTimerHTML;
+  modalBody.innerHTML+=stars;
   $('.modal').modal('show');
 }
 //Function: Adds specified class to obj
@@ -161,6 +165,36 @@ function displayMoves(){
 function reset(){
   moves=0;
   document.location.reload(false);//reload page from cache
+}
+//Generate stars
+function generateStars(){
+  let numStars=calcStarRating(moves);
+  console.log(numStars);
+  let starsHTML="<div class='stars'>";
+  for(let i=0;i<numStars;i++){
+    starsHTML+="<i class='material-icons star'>star_rate</i>";
+  }
+  starsHTML+="</div>";
+  console.log(starsHTML);
+  return starsHTML;
+}
+//Function returns star rating for user based on num of moves
+function calcStarRating(moves){
+  if(moves<25){
+    return 5;
+  }
+  else if(moves>25 && moves<=35){
+    return 4;
+  }
+  else if(moves>35 && moves<=45){
+    return 3;
+  }
+  else if(moves>45 && moves<=55){
+    return 2;
+  }
+  else{
+    return 1;
+  }
 }
 //Shuffle Array Function
 function shuffle(arr){
