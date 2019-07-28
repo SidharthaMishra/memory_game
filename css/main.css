@@ -73,6 +73,7 @@ a:hover{
   height:auto;
   display:flex;
   flex-wrap:wrap;
+  /* Gradient from: https://cssgradient.io */
   background: rgb(23,118,145);
   background: -moz-linear-gradient(152deg, rgba(23,118,145,1) 32%, rgba(19,142,186,1) 66%, rgba(10,102,152,1) 100%);
   background: -webkit-linear-gradient(152deg, rgba(23,118,145,1) 32%, rgba(19,142,186,1) 66%, rgba(10,102,152,1) 100%);
