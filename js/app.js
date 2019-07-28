@@ -23,6 +23,7 @@ let openCards=[];//array to hold open cards
 let numMatchedCards=0;
 let currentCard;
 let unmatchedCards;
+let numSeconds=0;
 const deck=document.querySelector('.card-container');
 const resetButton=document.querySelector('#reset-button');
 const movesContainer=document.querySelector('.moves');
@@ -44,8 +45,19 @@ document.addEventListener('DOMContentLoaded',function(){
 function gameInit(){
   moves=0;
   numMatchedCards=0;
+
+  //setInterval(timer,1000);
   shuffle(icons);
   assignIcons(icons);
+  startTimer();
+}
+function startTimer(){
+  setInterval(function(){
+    numSeconds++;
+  },1000);
+}
+function stopTimer(){
+  clearInterval(startTimer);
 }
 //toggle function: toggles card and icons
 function toggleCard(card){
@@ -96,7 +108,11 @@ function processClick(card){
       //TODO:Call displayModal function here to let use know they have won
       //Temporary alert: replace with call to displayModal with the
       //same time delay
-      setTimeout(function(){alert("You Won!")},500);
+      setTimeout(function(){
+        stopTimer();
+        let gameTime = calcTime(numSeconds);
+        alert("You Won! Elapsed Game Time: " + gameTime);
+      },500);
     }
   }
   else{
@@ -110,6 +126,14 @@ function processClick(card){
     },500);
   }
 }
+//Function: Takes in time in seconds and returns the number of hours, minutes and seconds
+function calcTime(s){
+  let h = Math.floor(s/3600);
+  s -= h * 3600;
+  let m = Math.floor(numSeconds/60);
+  s -= m * 60;
+  return h + ":" + m + ":" + s;
+}
 //TODO: Implement Display Modal Function to let user know when they have won
 
 //Function: Adds specified class to obj
@@ -122,7 +146,7 @@ function removeClass(obj,className){
 }
 //Display moves function
 function displayMoves(){
-  document.querySelector('.moves').innerHTML = moves + " Moves";
+  document.querySelector('.moves').innerHTML = moves+" Moves";
 }
 //Reset Function
 function reset(){
