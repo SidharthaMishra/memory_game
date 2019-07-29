@@ -31,3 +31,16 @@ ___
 ___
 
 #### Live Demo: https://sidharthamishra.github.io/memory_game/
+
+___
+
+### Technologies Used
+
+  - HTML
+  - CSS
+  - JavaScript/ES6
+  - Bootstrap
+  - Font Awesome
+  - Google Fonts
+  - Google Material Icons
+  ___
