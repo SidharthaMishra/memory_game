@@ -10,7 +10,7 @@ ___
 
 ---
 
-#### Project Structure
+### Project Structure
 
 **This repo has the following structure/files:**
 
@@ -30,4 +30,4 @@ ___
 
 ___
 
-##### Live Demo: https://sidharthamishra.github.io/memory_game/
+#### Live Demo: https://sidharthamishra.github.io/memory_game/
