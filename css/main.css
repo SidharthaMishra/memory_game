@@ -1,160 +1,187 @@
 /*General*/
-*{
-  box-sizing:border-box;
-  width:100%;
+* {
+  box-sizing: border-box;
+  width: 100%;
 }
-body{
-  background-color:#274A7D;
-  color:white;
+
+body {
+  background-color: #274A7D;
+  color: white;
 }
-h1{
-  text-align:center;
-  padding:25px;
+
+h1 {
+  text-align: center;
+  padding: 25px;
   font-family: 'Montserrat', sans-serif;
 }
+
 h2,
-h3{
+h3 {
   font-family: 'Montserrat', sans-serif;
 }
+
 /*Header*/
-.header{
-  width:100%;
+.header {
+  width: 100%;
 }
-.header-features{
-  width:60%;
-  display:flex;
-  flex-wrap:wrap;
-  padding:15px;
-  margin:auto;
+
+.header-features {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px;
+  margin: auto;
 }
-.stars{
-  width:33.333333333%;
-  display:inline-block;
-  text-align:left;
+
+.stars {
+  width: 33.333333333%;
+  display: inline-block;
+  text-align: left;
 }
-.star{
-  font:24px;
-  padding:0;
-  margin:0;
-  width:1em;
-  color:orange;
+
+.star {
+  font: 24px;
+  padding: 0;
+  margin: 0;
+  width: 1em;
+  color: orange;
 }
-.moves{
-  display:inline;
-  width:33.333333333%;
-  text-align:left;
-  margin:auto;
-  font-size:24px;
-  font-family:'Montserrat', sans-serif;
+
+.moves {
+  display: inline;
+  width: 33.333333333%;
+  text-align: left;
+  margin: auto;
+  font: 24px 'Montserrat',sans-serif;
 }
-.reset{
-  width:33.333333333%;
-  display:inline-block;
-  text-align:center;
+
+.reset {
+  width: 33.333333333%;
+  display: inline-block;
+  text-align: center;
 }
-.reset-button{
-  width:auto;
-  font-size:36px;
+
+.reset-button {
+  width: auto;
+  font-size: 32px;
 }
-a{
+
+a {
   text-decoration: none;
 }
-#reset-button{
-  color:white;
+
+#reset-button {
+  color: white;
 }
-a:hover{
-  cursor:pointer;
+
+a:hover {
+  cursor: pointer;
 }
+
 /*Cards*/
-.card-container{
-  display:flex;
-  flex-wrap:wrap;
-  width:90%;
-  margin:auto;
-  height:auto;
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+  height: auto;
   /* Gradient from: https://cssgradient.io */
-  background: rgb(23,118,145);
-  background: -moz-linear-gradient(152deg, rgba(23,118,145,1) 32%, rgba(19,142,186,1) 66%, rgba(10,102,152,1) 100%);
-  background: -webkit-linear-gradient(152deg, rgba(23,118,145,1) 32%, rgba(19,142,186,1) 66%, rgba(10,102,152,1) 100%);
-  background: linear-gradient(152deg, rgba(23,118,145,1) 32%, rgba(19,142,186,1) 66%, rgba(10,102,152,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#177691",endColorstr="#0a6698",GradientType=1);
+  background: rgb(23, 118, 145);
+  background: -moz-linear-gradient(152deg, rgba(23, 118, 145, 1) 32%, rgba(19, 142, 186, 1) 66%, rgba(10, 102, 152, 1) 100%);
+  background: -webkit-linear-gradient(152deg, rgba(23, 118, 145, 1) 32%, rgba(19, 142, 186, 1) 66%, rgba(10, 102, 152, 1) 100%);
+  background: linear-gradient(152deg, rgba(23, 118, 145, 1) 32%, rgba(19, 142, 186, 1) 66%, rgba(10, 102, 152, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#177691", endColorstr="#0a6698", GradientType=1);
   justify-content: center;
-  padding-top:20px;
-  padding-bottom:20px;
-  border-radius:20px;
-  margin-bottom:20px;
-  box-shadow:5px 5px 10px #001a33;
+  padding: 20px 0;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 10px #001a33;
 }
-.card{
-  height:150px;
-  width:40%;
-  text-align:center;
-  margin:10px;
-  padding:5px;
-  border-radius:5px;
-  box-shadow:5px 5px 10px #001a33;
+
+.card {
+  height: 150px;
+  width: 40%;
+  text-align: center;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px #001a33;
   transition: transform 0.5s;
 }
-.card-closed{
-  background-color:#4d4d4d;
+
+.card-closed {
+  background-color: #4d4d4d;
 }
-.card-open{
-  transform:rotateY(180deg);
-  background-color:navy;
+
+.card-open {
+  transform: rotateY(180deg);
+  background-color: navy;
 }
-.card:hover{
-  cursor:pointer;
+
+.card:hover {
+  cursor: pointer;
 }
-.card-icon{
-  visibility:hidden;
+
+.card-icon {
+  visibility: hidden;
 }
-.card-icon-visible{
-  visibility:visible;
-  font-size:24px;
-  color:white;
-  margin:auto;
-  transform:rotateY(180deg);
+
+.card-icon-visible {
+  visibility: visible;
+  font-size: 24px;
+  color: white;
+  margin: auto;
+  transform: rotateY(180deg);
 }
-.card-matched{
-  background-color:purple;
-  pointer-events:none;
-  transform:rotateY(360deg);
+
+.card-matched {
+  background-color: purple;
+  pointer-events: none;
+  transform: rotateY(360deg);
 }
-.card-unmatched{
-  background-color:red;
-  pointer-events:none;
-  transform:translateX(5px);
+
+.card-unmatched {
+  background-color: red;
+  pointer-events: none;
+  transform: translateX(5px);
 }
+
 /*Modal*/
-.modal{
-  color:black;
+.modal {
+  color: black;
   text-align: center;
   justify-content: center;
 }
-.modal-body{
-  font-size:18px;
-  padding:10px;
+
+.modal-body {
+  font-size: 18px;
+  padding: 10px;
 }
-.close{
-  text-align:right;
-  padding-right:25px;
+
+.close {
+  text-align: right;
+  padding-right: 25px;
 }
-.fa-trophy{
-  font-size:48px;
-  color:orange;
-  padding:18px;
+
+.fa-trophy {
+  font-size: 48px;
+  color: orange;
+  padding: 18px;
 }
+
 /*Media Queries*/
-@media screen and (min-width:700px){
-  .card-container{
-    width:85%;
+@media screen and (min-width:700px) {
+  .card-container {
+    width: 85%;
   }
-  .card{
-    width:20%;
+
+  .card {
+    width: 20%;
   }
 }
-@media screen and (min-width:1300px){
-  .card-container{
-    max-width:1104px;
+
+@media screen and (min-width:1300px) {
+  .card-container {
+    max-width: 1104px;
   }
 }
