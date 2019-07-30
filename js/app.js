@@ -98,7 +98,7 @@ function processClick(card) {
     dispStars();
   }
   //if two consecutive open cards do not match: flip them back over/close them
-  if (openCards.length == 2 && !card.classList.contains("card-matched")) {
+  if (openCards.length === 2 && !card.classList.contains("card-matched")) {
     setTimeout(function() {
       for (let card = 0; card < openCards.length; card++) {
         toggleCard(openCards[card]);
