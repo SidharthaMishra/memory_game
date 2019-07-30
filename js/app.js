@@ -24,7 +24,7 @@ let numMatchedCards = 0;
 let currentCard;
 let unmatchedCards;
 let numSeconds = 0; //total number of elapsed seconds during gameplay
-let time=0;//time var used to display game time on page
+let time = 0; //time var used to display game time on page
 const deck = document.querySelector('.card-container');
 const resetButton = document.querySelector('#reset-button');
 const movesContainer = document.querySelector('.moves');
@@ -100,7 +100,7 @@ function processClick(card) {
   //if two consecutive open cards do not match: flip them back over/close them
   if (openCards.length == 2 && !card.classList.contains("card-matched")) {
     setTimeout(function() {
-      for (let card=0; card<openCards.length;card++) {
+      for (let card = 0; card < openCards.length; card++) {
         toggleCard(openCards[card]);
       }
       openCards = [];
@@ -124,7 +124,7 @@ function processClick(card) {
     addClass(openCards[1], "card-unmatched");
     unmatchedCards = document.querySelectorAll('.card-unmatched');
     setTimeout(function() {
-      for (let card=0;card<unmatchedCards.length;card++) {
+      for (let card = 0; card < unmatchedCards.length; card++) {
         removeClass(unmatchedCards[card], "card-unmatched");
       }
     }, 500);
@@ -157,11 +157,11 @@ function displayModal() {
   $('.modal').modal('show');
 }
 //Display Elapsed Time During Game Play
-function dispTime(){
-  setInterval(function(){
-      time=calcTime(numSeconds);
-      document.querySelector('.timer').innerHTML=time;
-    },1000);
+function dispTime() {
+  setInterval(function() {
+    time = calcTime(numSeconds);
+    document.querySelector('.timer').innerHTML = time;
+  }, 1000);
 }
 //Function: Adds specified class to obj
 function addClass(obj, className) {
@@ -183,13 +183,11 @@ function reset() {
 //Generate stars
 function generateStars() {
   let numStars = calcStarRating(moves);
-  console.log(numStars);
   let starsHTML = "<div class='stars'>";
   for (let i = 0; i < numStars; i++) {
     starsHTML += "<i class='material-icons star'>star_rate</i>";
   }
   starsHTML += "</div>";
-  console.log(starsHTML);
   return starsHTML;
 }
 //Function returns star rating for user based on num of moves
@@ -207,10 +205,9 @@ function calcStarRating(moves) {
   }
 }
 //Display Stars : During Game Play
-function dispStars(){
-  let starsOnPage=generateStars();
-  document.querySelector('.stars').innerHTML=starsOnPage;
-
+function dispStars() {
+  let starsOnPage = generateStars();
+  document.querySelector('.stars').innerHTML = starsOnPage;
 }
 //Shuffle Array Function
 function shuffle(arr) {
