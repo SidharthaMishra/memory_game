@@ -1,5 +1,4 @@
 # Memory Game
-___
 
 **Memory Game is a game involving cards that need to be flipped over and matched. The cards are shuffled and placed randomly on the board. Once a card is flipped, it remains flipped until a second card is turned over. If both of the cards match, they remain turned over otherwise, they are flipped back. This pattern continues until all the cards on the screen have been successfully matched.**
 
@@ -9,6 +8,11 @@ ___
 
 
 ---
+
+#### Live Demo: https://sidharthamishra.github.io/memory_game/
+
+___
+
 
 ### Project Structure
 
@@ -26,12 +30,6 @@ ___
       index.html
       README.md
 ```
-
-
-___
-
-#### Live Demo: https://sidharthamishra.github.io/memory_game/
-
 ___
 
 ### Technologies Used
