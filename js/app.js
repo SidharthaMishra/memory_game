@@ -23,7 +23,8 @@ let openCards = []; //array to hold open cards
 let numMatchedCards = 0;
 let currentCard;
 let unmatchedCards;
-let numSeconds = 0;
+let numSeconds = 0; //total number of elapsed seconds during gameplay
+let time=0;//time var used to display game time on page
 const deck = document.querySelector('.card-container');
 const resetButton = document.querySelector('#reset-button');
 const movesContainer = document.querySelector('.moves');
@@ -51,7 +52,9 @@ function gameInit() {
   numMatchedCards = 0;
   shuffle(icons);
   assignIcons(icons);
+  dispStars();
   startTimer();
+  dispTime();
 }
 //Function: starts timer
 function startTimer() {
@@ -92,6 +95,7 @@ function processClick(card) {
     openCards.push(card);
     ++moves;
     displayMoves();
+    dispStars();
   }
   //if two consecutive open cards do not match: flip them back over/close them
   if (openCards.length == 2 && !card.classList.contains("card-matched")) {
@@ -152,6 +156,13 @@ function displayModal() {
   modalBody.innerHTML += stars;
   $('.modal').modal('show');
 }
+//Display Elapsed Time During Game Play
+function dispTime(){
+  setInterval(function(){
+      time=calcTime(numSeconds);
+      document.querySelector('.timer').innerHTML=time;
+    },1000);
+}
 //Function: Adds specified class to obj
 function addClass(obj, className) {
   obj.classList.add(className);
@@ -185,7 +196,7 @@ function generateStars() {
 function calcStarRating(moves) {
   if (moves < 25) {
     return 5;
-  } else if (moves > 25 && moves <= 35) {
+  } else if (moves >= 25 && moves <= 35) {
     return 4;
   } else if (moves > 35 && moves <= 45) {
     return 3;
@@ -194,6 +205,12 @@ function calcStarRating(moves) {
   } else {
     return 1;
   }
+}
+//Display Stars : During Game Play
+function dispStars(){
+  let starsOnPage=generateStars();
+  document.querySelector('.stars').innerHTML=starsOnPage;
+
 }
 //Shuffle Array Function
 function shuffle(arr) {

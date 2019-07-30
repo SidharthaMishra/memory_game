@@ -2,6 +2,7 @@
 * {
   box-sizing: border-box;
   width: 100%;
+  /* border:2px solid red; */
 }
 
 body {
@@ -23,20 +24,24 @@ h3 {
 /*Header*/
 .header {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .header-features {
-  width: 60%;
-  display: flex;
-  flex-wrap: wrap;
   padding: 15px;
   margin: auto;
 }
 
+.row{
+  margin:auto;
+}
+
 .stars {
-  width: 33.333333333%;
-  display: inline-block;
-  text-align: left;
+  display: inline;
+  text-align: center;
+  padding:5px;
+  order:1;
 }
 
 .star {
@@ -48,9 +53,9 @@ h3 {
 }
 
 .moves {
-  display: inline;
+  display: inline-block;
   width: 33.333333333%;
-  text-align: left;
+  text-align: center;
   margin: auto;
   font: 24px 'Montserrat',sans-serif;
 }
@@ -58,9 +63,18 @@ h3 {
 .reset {
   width: 33.333333333%;
   display: inline-block;
-  text-align: center;
+  text-align: right;
+  margin:auto;
+  padding:5px;
 }
-
+.timer{
+  width:33.333333333%;
+  display:inline-block;
+  font: 24px 'Montserrat',sans-serif;
+  padding:5px;
+  text-align:center;
+  margin:auto;
+}
 .reset-button {
   width: auto;
   font-size: 32px;
@@ -172,6 +186,10 @@ a:hover {
 
 /*Media Queries*/
 @media screen and (min-width:700px) {
+  .header{
+    width:60%;
+    margin:auto;
+  }
   .card-container {
     width: 85%;
   }
@@ -180,7 +198,11 @@ a:hover {
     width: 20%;
   }
 }
-
+@media screen and (min-width:1024px){
+  .header{
+    width:870px;
+  }
+}
 @media screen and (min-width:1300px) {
   .card-container {
     max-width: 1104px;
