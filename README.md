@@ -57,7 +57,7 @@ ___
       |
       |-css / main.css
       |
-      |-img / Memory_Game_Favicon.png
+      |-img / Memory_Game_Favicon.png, Screenshot[...].png
       |
       |-js / app.js
       |
