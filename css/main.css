@@ -116,6 +116,7 @@ a:hover {
 .card-open {
   transform: rotateY(180deg);
   background-color: navy;
+  pointer-events: none;
 }
 
 .card:hover {
